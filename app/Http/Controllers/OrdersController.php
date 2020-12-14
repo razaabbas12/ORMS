@@ -127,14 +127,13 @@ class OrdersController extends Controller
             Order::where('id',$id)->update(['status'=>$status]);
             return redirect('orders');            
         }
-
-
-
     }
+
     public function customerOrders(CustomerOrdersDataTable $dataTable)
     {
         return $dataTable->render('order.customer-orders');
     }
+    
     public function manageOrder($id)
     {
         $start_date=Carbon::now()->format('Y-m-d');

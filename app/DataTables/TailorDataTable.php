@@ -66,15 +66,15 @@ class TailorDataTable extends DataTable
                     ->setTableId('tailor-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip')
-                    ->orderBy(1)
-                    ->buttons(
+                    // ->dom('Bfrtip')
+                    ->orderBy(1);
+                    // ->buttons(
                         // Button::make('create'),
-                        Button::make('export'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    );
+                        // Button::make('export'),
+                        // Button::make('print'),
+                        // Button::make('reset'),
+                        // Button::make('reload')
+                    // );
     }
 
     /**

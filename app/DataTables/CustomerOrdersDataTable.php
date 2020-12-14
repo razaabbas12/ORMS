@@ -21,16 +21,16 @@ class CustomerOrdersDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables()
-         ->eloquent($query)
-        ->addColumn('train', function ($query){
+            ->eloquent($query)
+            ->addColumn('train', function ($query){
 
-                return Helper::userIdToName($query->train_id);   
-            })
-        ->addColumn('city', function ($query){
+                    return Helper::userIdToName($query->train_id);   
+                })
+            ->addColumn('city', function ($query){
 
-                return Helper::cityToName($query->city_id);   
-            })
-        ->escapeColumns([]);
+                    return Helper::cityToName($query->city_id);   
+                })
+            ->escapeColumns([]);
     }
 
     /**
@@ -41,8 +41,7 @@ class CustomerOrdersDataTable extends DataTable
      */
     public function query(Schedule $model)
     {
-        return $model->newQuery();
-                
+        return $model->newQuery();  
     }
 
     /**
@@ -56,15 +55,15 @@ class CustomerOrdersDataTable extends DataTable
                     ->setTableId('customerorders-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip')
-                    ->orderBy(1)
-                    ->buttons(
+                    // ->dom('Bfrtip')
+                    ->orderBy(1);
+                    // ->buttons(
                         // Button::make('create'),
-                        Button::make('export'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    );
+                        // Button::make('export'),
+                        // Button::make('print'),
+                        // Button::make('reset'),
+                        // Button::make('reload')
+                    // );
     }
 
     /**
